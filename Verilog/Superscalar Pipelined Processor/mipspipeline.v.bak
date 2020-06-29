@@ -1,0 +1,343 @@
+//-----
+//mipspipeline.v
+//-----
+
+module mipspipeline(input			clk, reset,
+					output	[31:0]	pcfODD,
+					input	[31:0]	instrfODD,
+					output			memwritedODD,
+					output	[31:0]	aluoutmODD, writedataeODD,
+					input	[31:0]	readdatamODD,
+					
+					output	[31:0]	pcfEVEN,
+					input	[31:0]	instrfEVEN,
+					output			memwritedEVEN,
+					output	[31:0]	aluoutmEVEN, writedataeEVEN,
+					input	[31:0]	readdatamEVEN);
+					
+	wire 		memtoregdODD, memtoregdEVEN;
+	wire 	 	alusrcdODD, alusrcdEVEN;
+	wire 	 	regdstdODD, regdstdEVEN;
+	wire		regwritedODD, jumpdODD, pcsrcdODD, branchdODD;
+	wire		regwritedEVEN, jumpdEVEN, pcsrcdEVEN, branchdEVEN;
+	wire [3:0]	alucontroldODD, alucontroldEVEN;
+	wire [31:0] instrdODD, instrdEVEN;
+	
+	controller cODD		(instrdODD[31:26], instrdODD[5:0],
+						 regwritedODD, memtoregdODD, memwritedODD,
+						 alucontroldODD, alusrcdODD, regdstdODD,
+						 branchdODD, jumpdODD, pcsrcdODD);
+	controller cEVEN	(instrdEVEN[31:26], instrdEVEN[5:0],
+						 regwritedEVEN, memtoregdEVEN, memwritedEVEN,
+						 alucontroldEVEN, alusrcdEVEN, regdstdEVEN,
+						 branchdEVEN, jumpdEVEN, pcsrcdEVEN);
+	
+	datapath dp	(clk, reset, pcfODD, instrdODD, aluoutmODD, writedataeODD,
+				 readdatamODD, memtoregdODD, pcsrcdODD, alusrcdODD,
+				 regdstdODD, regwritedODD, jumpdODD, alucontroldODD,
+				 memwritedODD, branchdODD, instrfODD,
+				 pcfEVEN, instrdEVEN, aluoutmEVEN, writedataeEVEN,
+				 readdatamEVEN, memtoregdEVEN, pcsrcdEVEN, alusrcdEVEN,
+				 regdstdEVEN, regwritedEVEN, jumpdEVEN, alucontroldEVEN,
+				 memwritedEVEN, branchdEVEN, instrfEVEN);
+						 
+endmodule
+
+//-------------------------------------------------------
+
+module controller(input	[5:0]	op, funct,
+				  output		regwrited,
+				  output 		memtoregd,
+				  output		memwrited,
+				  output [3:0]	alucontrold,
+				  output 		alusrcd,
+				  output 		regdstd,
+				  output		branchd,
+				  output		jumpd,
+				  output		pcsrcd);
+				  
+	wire [1:0]  aluop;
+	
+	
+	maindec md (op, regwrited, memtoregd, memwrited,
+				alusrcd, regdstd, branchd, jumpd, aluop);
+				
+	aludec  ad (funct, aluop, alucontrold, jumpd);
+	
+endmodule
+
+//-------------------------------------------------------
+
+module maindec (input [5:0]	op,
+				output		regwrited,
+				output		memtoregd,
+				output		memwrited,
+				output		alusrcd,
+				output		regdstd,
+				output		branchd,
+				output		jumpd,
+				output[1:0]	aluop);
+	
+	reg [8:0]	controls;
+	
+	assign {regwrited, regdstd, alusrcd,
+			branchd, memwrited,
+			memtoregd, aluop, jumpd}
+			= controls;
+			
+	always @(*)
+		case(op)
+			6'b000000: controls <= 9'b110000100; //RTYPE	
+			6'b100011: controls <= 9'b101001000; //LW
+			6'b101011: controls <= 9'b001010000; //SW
+			6'b000100: controls <= 9'b000100010; //BEQ
+			6'b001000: controls <= 9'b101000000; //ADDI
+			6'b000010: controls <= 9'b000000001; //J
+			default:   controls <= 9'bxxxxxxxxx; //???
+		endcase
+endmodule
+
+//-------------------------------------------------------
+
+module aludec(input		[5:0]	funct,
+			  input		[1:0]	aluop,
+			  output reg[3:0]	alucontrol,
+			  output			jumpd);
+			  
+	always @(*)
+		case(aluop)
+			2'b00: alucontrol <= 4'b0010;  // add
+			2'b01: alucontrol <= 4'b1010;  // sub
+			2'b11: alucontrol <= 4'b0000;  // and
+			default: case(funct)          // RTYPE
+				6'b100000: alucontrol <= 4'b0010; // ADD
+				6'b100010: alucontrol <= 4'b1010; // SUB
+				6'b100100: alucontrol <= 4'b0000; // AND
+				6'b100101: alucontrol <= 4'b0001; // OR
+				6'b101010: alucontrol <= 4'b1011; // SLT
+				default:   alucontrol <= 4'bxxxx; // ???
+			endcase
+		endcase
+endmodule
+
+//-------------------------------------------------------
+
+module datapath(input		clk, reset,
+				output[31:0]pcfODD,
+				input [31:0]instrdODD, 
+				output[31:0]aluoutmODD, writedataeODD, 
+				input [31:0]readdatamODD,
+				input 		memtoregdODD, pcsrcdODD,
+				input 		alusrcdODD, regdstdODD,
+				input		regwritedODD, jumpdODD,
+				input [3:0]	alucontroldODD,
+				input		memwritedODD, branchdODD,
+				input [31:0]instrfODD,
+				
+				output[31:0]pcfEVEN,
+				input [31:0]instrdEVEN, 
+				output[31:0]aluoutmEVEN, writedataeEVEN, 
+				input [31:0]readdatamEVEN,
+				input 		memtoregdEVEN, pcsrcdEVEN,
+				input 		alusrcdEVEN, regdstdEVEN,
+				input		regwritedEVEN, jumpdEVEN,
+				input [3:0]	alucontroldEVEN,
+				input		memwritedEVEN, branchdEVEN,
+				input [31:0]instrfEVEN);
+				
+			
+	wire [31:0] pcnextbrfODD, pcnextbrfEVEN;
+	wire [31:0] resultwODD, resultwEVEN;
+	
+	//f stage
+	wire [31:0] pcplus4fODD, pcplus4fEVEN;
+	wire [31:0] pcnextfODD, pcnextfEVEN;
+	wire		stallf;
+	
+	//d stage
+	wire [31:0] pcplus4dODD, pcplus4dEVEN;
+	wire [4:0]	rsdODD, rtdODD, rddODD, rsdEVEN, rtdEVEN, rddEVEN;
+	wire [31:0] signimmdODD, signimmshdODD, pcbranchdODD, pcjumpdfinalODD;
+	wire [31:0] signimmdEVEN, signimmshdEVEN, pcbranchdEVEN, pcjumpdfinalEVEN;
+	wire		equaldODD, equaldEVEN;
+	wire [31:0]	srcadODD, srcbdODD, srcadequalsODD, srcbdequalsODD;
+	wire [31:0]	srcadEVEN, srcbdEVEN, srcadequalsEVEN, srcbdequalsEVEN;
+	wire		stalld, forwardadODD, forwardbdODD;
+	wire		forwardadEVEN, forwardbdEVEN;
+	
+	//e stage
+	wire		regwriteeODD, memtoregeODD, memwriteeODD;
+	wire		regwriteeEVEN, memtoregeEVEN, memwriteeEVEN;
+	wire [3:0]  alucontroleODD, alucontroleEVEN;
+	wire		alusrceODD, regdsteODD;
+	wire		alusrceEVEN, regdsteEVEN;
+	wire [31:0]	srcaeODD, srcbeODD, srcaefinalODD, srcbefinalODD;
+	wire [31:0]	srcaeEVEN, srcbeEVEN, srcaefinalEVEN, srcbefinalEVEN;
+	wire [31:0] signimmeODD;
+	wire [4:0]  rseODD, rteODD, rdeODD, writeregeODD;
+	wire [1:0]  forwardaeODD, forwardbeODD;
+	wire [31:0] signimmeEVEN;
+	wire [4:0]  rseEVEN, rteEVEN, rdeEVEN, writeregeEVEN;
+	wire [1:0]  forwardaeEVEN, forwardbeEVEN;
+	wire		flushe;
+	
+	//m stage
+	wire 		regwritemODD, memtoregmODD, memwritemODD;
+	wire [31:0]	writedatamODD;
+	wire [4:0]  writeregmODD;
+	wire 		regwritemEVEN, memtoregmEVEN, memwritemEVEN;
+	wire [31:0]	writedatamEVEN;
+	wire [4:0]  writeregmEVEN;
+	
+	//w stage
+	wire		regwritewODD, memtoregwODD;
+	wire [31:0]	readdatawODD, aluoutwODD;
+	wire [4:0]	writeregwODD;	
+	wire [31:0] aluresulteODD;
+	wire [27:0] pcjumpdODD;
+	wire		regwritewEVEN, memtoregwEVEN;
+	wire [31:0]	readdatawEVEN, aluoutwEVEN;
+	wire [4:0]	writeregwEVEN;	
+	wire [31:0] aluresulteEVEN;
+	wire [27:0] pcjumpdEVEN;
+	
+	//hazardunit
+	/*hazardunit huODD	(branchdODD, memtoregeODD, regwriteeODD, memtoregmODD, 
+						 regwritemODD, regwritewODD, instrdODD[25:21],
+						 instrdODD[20:16], rseODD, rteODD, writeregeODD, 
+						 writeregmODD, writeregwODD,
+						 stallfODD, stalldODD, flusheODD, forwardadODD, forwardbdODD,
+						 forwardaeODD, forwardbeODD);
+						 
+	hazardunit huEVEN	(branchdEVEN, memtoregeEVEN, regwriteeEVEN, memtoregmEVEN, 
+						 regwritemEVEN, regwritewEVEN, instrdEVEN[25:21],
+						 instrdEVEN[20:16], rseEVEN, rteEVEN, writeregeEVEN, 
+						 writeregmEVEN, writeregwEVEN,
+						 stallfEVEN, stalldEVEN, flusheEVEN, forwardadEVEN,
+						 forwardbdEVEN,
+						 forwardaeEVEN, forwardbeEVEN); */
+						 
+	hazard hu 	(writeregeODD, writeregmODD, writeregwODD,writeregeEVEN, writeregmEVEN, writeregwEVEN,
+				 regwriteeODD, regwritemODD, regwritewODD, regwriteeEVEN, regwritemEVEN, regwritewEVEN,
+				 memtoregeODD, memtoregmODD, memtoregeEVEN, memtoregmEVEN,
+				 rsdODD, rtdODD, rseODD, rteODD, rsdEVEN, rtdEVEN, rseEVEN, rteEVEN,
+				 branchdODD, branchdEVEN,
+				 stallf, stalld, flushe,
+				 forwardadODD, forwardbdODD, forwardadEVEN, forwardbdEVEN,
+				 forwardaeODD, forwardbeODD, forwardaeEVEN, forwardbeEVEN);
+	
+	//next PC logic
+	flopenr #(32)	pcregODD	(clk, reset, ~stallf, pcnextfODD, pcfODD);
+	adder			pcadd1ODD	(pcfODD, 32'b1000, pcplus4fODD);
+	sl2				immshODD	(signimmdODD, signimmshdODD);
+	adder			pcadd2ODD	(pcplus4dODD, signimmshdODD, pcbranchdODD);
+	mux2 #(32)		pcbrmuxODD	(pcplus4fODD, pcbranchdODD, pcsrcdODD, pcnextbrfODD);
+	mux2 #(32)		pcmuxODD	(pcnextbrfODD, {pcplus4fODD[31:28],
+								 instrdODD[25:0], 2'b00}, jumpdODD, pcnextfODD);
+	
+	adder			pcODDtoEVEN	(pcfODD, 32'b100, pcfEVEN);
+	
+	//flopenr #(32)	pcregEVEN	(clk, reset, ~stallfEVEN, pcnextfEVEN, pcfEVEN);
+	//adder			pcadd1EVEN	(pcfEVEN, 32'b100, pcplus4fEVEN);
+	sl2				immshEVEN	(signimmdEVEN, signimmshdEVEN);
+	adder			pcadd2EVEN	(pcplus4dEVEN, signimmshdEVEN, pcbranchdEVEN);
+	mux2 #(32)		pcbrmuxEVEN	(pcplus4fEVEN, pcbranchdEVEN, pcsrcdEVEN, pcnextbrfEVEN);
+	mux2 #(32)		pcmuxEVEN	(pcnextbrfEVEN, {pcplus4fEVEN[31:28],
+								 instrdEVEN[25:0], 2'b00}, jumpdEVEN, pcnextfEVEN);
+						  	
+	//ff from f to d stage
+	flopenrclr #(64)ftodODD		(clk, reset, ~stalld, pcsrcdODD, 
+								 {instrfODD, pcplus4fODD},
+								 {instrdODD, pcplus4dODD});
+	flopenrclr #(64)ftodEVEN	(clk, reset, ~stalld, pcsrcdEVEN, 
+								 {instrfEVEN, pcplus4fEVEN},
+								 {instrdEVEN, pcplus4dEVEN});
+						  
+	//register file logic
+	regfile		rf	(clk, regwritewODD, instrdODD[25:21], instrdODD[20:16],
+				     writeregwODD, resultwODD, srcadODD, srcbdODD,
+					 regwritewEVEN, instrdEVEN[25:21], instrdEVEN[20:16],
+				     writeregwEVEN, resultwEVEN, srcadEVEN, srcbdEVEN);				   				   
+		
+	//d stage
+	comparator 	eqODD 		(srcadequalsODD, srcbdequalsODD, equaldODD);
+	signext		seODD		(instrdODD[15:0], signimmdODD);
+	mux2 #(32)	srcadmuxODD	(srcadODD, aluoutmODD, forwardadODD, srcadequalsODD);
+	mux2 #(32)	srcbdmuxODD	(srcbdODD, aluoutmODD, forwardbdODD, srcbdequalsODD);
+	sl226		jshODD		(instrdODD[25:0], pcjumpdODD);
+	attach		jfinalODD	(pcjumpdODD, pcplus4fODD, pcjumpdfinalODD);
+	
+	comparator 	eqEVEN 		(srcadequalsEVEN, srcbdequalsEVEN, equaldEVEN);
+	signext		seEVEN		(instrdEVEN[15:0], signimmdEVEN);
+	mux2 #(32)	srcadmuxEVEN(srcadEVEN, aluoutmEVEN, forwardadEVEN, srcadequalsEVEN);
+	mux2 #(32)	srcbdmuxEVEN(srcbdEVEN, aluoutmEVEN, forwardbdEVEN, srcbdequalsEVEN);
+	sl226		jshEVEN		(instrdEVEN[25:0], pcjumpdEVEN);
+	attach		jfinalEVEN	(pcjumpdEVEN, pcplus4fEVEN, pcjumpdfinalEVEN);
+		
+	//ff from d to e stage
+	flopr #(111)dtoeODD		(clk, reset, {srcadODD, srcbdODD, instrdODD[25:21], 
+										  instrdODD[20:16], instrdODD[15:11], signimmdODD},
+									     {srcaeODD, srcbeODD, rseODD, 		   
+										  rteODD, rdeODD, signimmeODD});
+	flopr #(9)	dtoecuODD	(clk, reset, {regwritedODD, memtoregdODD, 
+										  memwritedODD, alucontroldODD, 
+										  alusrcdODD, regdstdODD},		   
+										 {regwriteeODD, memtoregeODD, 
+										  memwriteeODD, alucontroleODD,
+										  alusrceODD, regdsteODD});
+	
+	flopr #(111)dtoeEVEN	(clk, reset, {srcadEVEN, srcbdEVEN, instrdEVEN[25:21], 
+										  instrdEVEN[20:16], instrdEVEN[15:11], signimmdEVEN},
+										 {srcaeEVEN, srcbeEVEN, rseEVEN, 		   
+										  rteEVEN, rdeEVEN, signimmeEVEN});
+	flopr #(9)	dtoecuEVEN	(clk, reset, {regwritedEVEN, memtoregdEVEN, 
+										  memwritedEVEN, alucontroldEVEN, 
+										  alusrcdEVEN, regdstdEVEN},		   
+										 {regwriteeEVEN, memtoregeEVEN, 
+										  memwriteeEVEN, alucontroleEVEN,
+										  alusrceEVEN, regdsteEVEN});
+				   
+	//e stage
+	mux3 #(32)		srcaemuxODD	(srcaeODD, resultwODD, aluoutmODD, forwardaeODD, srcaefinalODD);
+	mux3 #(32)		srcbemuxODD	(srcbeODD, resultwODD, aluoutmODD, forwardbeODD, writedataeODD);
+	mux2 #(32)		srcbmux3ODD	(writedataeODD, signimmeODD, alusrceODD, srcbefinalODD);
+	mux2 #(5)		regmuxODD	(rteODD, rdeODD, regdsteODD, writeregeODD);
+	alu				aluODD		(srcaefinalODD, srcbefinalODD, alucontroleODD, instrdODD[10:6], aluresulteODD);
+	
+	mux3 #(32)		srcaemuxEVEN(srcaeEVEN, resultwEVEN, aluoutmEVEN, forwardaeEVEN, srcaefinalEVEN);
+	mux3 #(32)		srcbemuxEVEN(srcbeEVEN, resultwEVEN, aluoutmEVEN, forwardbeEVEN, writedataeEVEN);
+	mux2 #(32)		srcbmux3EVEN(writedataeEVEN, signimmeEVEN, alusrceEVEN, srcbefinalEVEN);
+	mux2 #(5)		regmuxEVEN	(rteEVEN, rdeEVEN, regdsteEVEN, writeregeEVEN);
+	alu				aluEVEN		(srcaefinalEVEN, srcbefinalEVEN, alucontroleEVEN, instrdEVEN[10:6], aluresulteEVEN);
+							
+	//ff from e to m stage
+	flopr #(69)		etomODD		(clk, reset, {aluresulteODD, writedataeODD, writeregeODD},
+											 {aluoutmODD,    writedatamODD, writeregmODD});
+	flopr #(3)		etomcuODD	(clk, reset, {regwriteeODD, memtoregeODD, memwriteeODD},
+											 {regwritemODD, memtoregmODD, memwritemODD});
+									   
+	flopr #(69)		etomEVEN	(clk, reset, {aluresulteEVEN, writedataeEVEN, writeregeEVEN},
+											 {aluoutmEVEN,    writedatamEVEN, writeregmEVEN});
+	flopr #(3)		etomcuEVEN	(clk, reset, {regwriteeEVEN, memtoregeEVEN, memwriteeEVEN},
+											 {regwritemEVEN, memtoregmEVEN, memwritemEVEN});
+									 									 
+	//m stage
+	and1			a1ODD	(branchdODD, equaldODD, pcsrcdODD);
+	and1			a1EVEN	(branchdEVEN, equaldEVEN, pcsrcdEVEN);
+		
+	//ff from m to w stage
+	flopr #(69)		mtowODD		(clk, reset, {readdatamODD, aluoutmODD, writeregmODD},
+											 {readdatawODD, aluoutwODD, writeregwODD});
+	flopr #(2)		mtowcuODD	(clk, reset, {regwritemODD, memtoregmODD},
+											 {regwritewODD, memtoregwODD});
+									   
+	flopr #(69)		mtowEVEN	(clk, reset, {readdatamEVEN, aluoutmEVEN, writeregmEVEN},
+											 {readdatawEVEN, aluoutwEVEN, writeregwEVEN});
+	flopr #(2)		mtowcuEVEN	(clk, reset, {regwritemEVEN, memtoregmEVEN},
+											 {regwritewEVEN, memtoregwEVEN});
+									 									 
+	//w stage
+	mux2 #(32)		resultmuxODD	(aluoutwODD, readdatawODD, memtoregwODD, resultwODD);	
+	mux2 #(32)		resultmuxEVEN	(aluoutwEVEN, readdatawEVEN, memtoregwEVEN, resultwEVEN);	
+	
+endmodule

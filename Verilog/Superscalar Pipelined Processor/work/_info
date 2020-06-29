@@ -1,0 +1,1039 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Darryl Derico\Dropbox\School Stuff\CPE 404\HW4
+vadder
+Z1 !s100 VKVnXX9Jmbh3Y2QK2n0bj3
+Z2 IJGC4`]MAVIO]5I2R8MHX=2
+Z3 VR4:XbIkd<X908neF9?e9K1
+Z4 dC:\Users\Darryl Derico\Dropbox\School Stuff\CPE 404\Final Project
+Z5 w1557106700
+Z6 8C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/mipsparts.v
+Z7 FC:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/mipsparts.v
+L0 41
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s108 1557109110.230000
+Z10 !s107 C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/mipsparts.v|
+Z11 !s90 -reportprogress|300|-work|work|C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/mipsparts.v|
+Z12 o-work work -O0
+!i10b 1
+!s85 0
+!s101 -O0
+valu
+Z13 !s100 9en7EGVgoD2ZJg_Mb1G<90
+Z14 I0n^7;zjg@1k>jZRFB_R2?1
+Z15 VjkN2@PPofjc][oQ9`1dQ`0
+R4
+R5
+Z16 8C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/alu32.v
+Z17 FC:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/alu32.v
+L0 7
+R8
+r1
+31
+Z18 !s90 -reportprogress|300|-work|work|C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/alu32.v|
+R12
+Z19 !s108 1557109114.755000
+Z20 !s107 C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/alu32.v|
+!i10b 1
+!s85 0
+!s101 -O0
+valu_MA
+Z21 !s100 LT8BoD[H0_LD^cR?Z<4?I1
+Z22 IF9VU20>MajGGi:L]]iEEU1
+Z23 V?P4aHV3le70kFm=[CoaUk2
+R4
+Z24 w1568682438
+Z25 8C:\Users\Darryl Derico\Dropbox\School Stuff\CPE 408\HW1\behavioral_hw1.v
+Z26 FC:\Users\Darryl Derico\Dropbox\School Stuff\CPE 408\HW1\behavioral_hw1.v
+L0 39
+R8
+r1
+31
+Z27 !s108 1568682589.302000
+Z28 !s107 C:\Users\Darryl Derico\Dropbox\School Stuff\CPE 408\HW1\behavioral_hw1.v|
+Z29 !s90 -reportprogress|300|-work|work|C:\Users\Darryl Derico\Dropbox\School Stuff\CPE 408\HW1\behavioral_hw1.v|
+R12
+Z30 nalu_@m@a
+!i10b 1
+!s85 0
+!s101 -O0
+valu_SAM
+!i10b 1
+!s100 6_oHL3S0Q038UaAe0Y^cS1
+Ic0VkJl]bzHCg2V9jd@hOe2
+Z31 VNE@2JKQ4BAEl6LV0gzJ0e1
+R4
+Z32 w1568687343
+Z33 8C:/Users/Darryl Derico/Downloads/top_SAM.v
+Z34 FC:/Users/Darryl Derico/Downloads/top_SAM.v
+Z35 L0 113
+R8
+r1
+!s85 0
+31
+Z36 !s108 1568687413.450000
+Z37 !s107 C:/Users/Darryl Derico/Downloads/top_SAM.v|
+Z38 !s90 -reportprogress|300|-work|work|C:/Users/Darryl Derico/Downloads/top_SAM.v|
+!s101 -O0
+R12
+Z39 nalu_@s@a@m
+valudec
+Z40 Ij[inK8AI<2U2aeMZfnRMl2
+Z41 VZll@ogDeZbBkcLPo`z5XN2
+R4
+R5
+Z42 8C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/mipspipeline.v
+Z43 FC:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/mipspipeline.v
+Z44 L0 107
+R8
+r1
+31
+Z45 !s108 1557109115.346000
+Z46 !s107 C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/mipspipeline.v|
+Z47 !s90 -reportprogress|300|-work|work|C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/mipspipeline.v|
+R12
+Z48 !s100 clS8@kzl34jDN^d3eobMI2
+!i10b 1
+!s85 0
+!s101 -O0
+vand1
+Z49 I=UCagD2_H5`d_`3zSG1B60
+Z50 V9f32GVeTG[fiR]@D>z8jU3
+R4
+R5
+R6
+R7
+Z51 L0 213
+R8
+r1
+31
+R9
+R10
+R11
+R12
+Z52 !s100 mG10_azmO<WYhJc]3Kf=a1
+!i10b 1
+!s85 0
+!s101 -O0
+vattach
+Z53 !s100 aVE>ND6f54?0m<bGXfTf90
+Z54 IinM>Hm4E8k:CMil[g>cah0
+Z55 Ve^@]6HL<C2;m2fJ36nk4N3
+R4
+R5
+R6
+R7
+L0 81
+R8
+r1
+31
+R9
+R10
+R11
+R12
+!i10b 1
+!s85 0
+!s101 -O0
+vcomparator
+Z56 !s100 eIbNlCUYJSPM[`Mi5=W0W0
+Z57 I1Z_n>mUL_;8:zE[KZnE:c2
+Z58 VUYIYQM4>8PGea`Kb6O0CL3
+R4
+R5
+R6
+R7
+L0 49
+R8
+r1
+31
+R9
+R10
+R11
+R12
+!i10b 1
+!s85 0
+!s101 -O0
+vcontroller
+Z59 IAJo1Z^ic^LN_@kKX6GnBU1
+Z60 V?FiJc6nH`@42i4h^YLmRa3
+R4
+R5
+R42
+R43
+L0 53
+R8
+r1
+31
+R45
+R46
+R47
+R12
+Z61 !s100 =55hO>>OgOXJa50SfnFZH2
+!i10b 1
+!s85 0
+!s101 -O0
+vcounter
+Z62 !s100 Oi7_^5V39P>h`14k]jmCA2
+Z63 Iok>RdjE`950XRj9EaQ`U<2
+Z64 VZ:?KfEHX;L3KHiOAF7ZcF3
+R4
+R24
+R25
+R26
+L0 60
+R8
+r1
+31
+R27
+R28
+R29
+R12
+!i10b 1
+!s85 0
+!s101 -O0
+vdatapath
+Z65 I_UVJ>SW2GLc^2<B6O3Sk53
+Z66 VNCfS_AFVJd0kTnZ3iE?a63
+R4
+R5
+R42
+R43
+Z67 L0 129
+R8
+r1
+31
+R45
+R46
+R47
+R12
+Z68 !s100 CjgRPWalnz@d[24Dmo<EW3
+!i10b 1
+!s85 0
+!s101 -O0
+vdmem
+Z69 !s100 N`27jLj4d4jfFWN:lmN[m0
+Z70 ITI7QLiZgY[afz_]V3Ze5k3
+Z71 V0KBHYZaH[mof;4bB9SF642
+R4
+R5
+Z72 8C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/mipsmem.v
+Z73 FC:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/mipsmem.v
+L0 17
+R8
+r1
+31
+Z74 !s108 1557109117.032000
+Z75 !s107 C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/mipsmem.v|
+Z76 !s90 -reportprogress|300|-work|work|C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/mipsmem.v|
+R12
+!i10b 1
+!s85 0
+!s101 -O0
+veqcomp
+Z77 IaG=<zG3k@5_;<?79;_m;h0
+Z78 VR1TleL7U<<>jSF45FFH;A0
+R4
+Z79 w1551421749
+R6
+R7
+Z80 L0 204
+R8
+r1
+31
+Z81 !s108 1555556081.435000
+R10
+R11
+R12
+Z82 !s100 >dPJ@GCDJ;XglAA0h=LDE2
+!i10b 1
+!s85 0
+!s101 -O0
+vflopenr
+Z83 IH>7`4I[S6U4PNz2GzMGD80
+Z84 Vl[@31Ka9Wak9oGo?2I58:3
+R4
+R5
+R6
+R7
+Z85 L0 124
+R8
+r1
+31
+R9
+R10
+R11
+R12
+Z86 !s100 ]f7Ch@d=D`3>9[9=zLMUk0
+!i10b 1
+!s85 0
+!s101 -O0
+vflopenrclr
+Z87 I;KlA]aRe8lkd:]6f_KdQ;3
+Z88 VZDCkeChhXLW1e1`093z4>3
+R4
+R5
+R6
+R7
+Z89 L0 137
+R8
+r1
+31
+R9
+R10
+R11
+R12
+Z90 !s100 ?7ghhoiE`A9M68hEkEnBJ0
+!i10b 1
+!s85 0
+!s101 -O0
+vflopr
+Z91 !s100 l=?T;:EA`?]l`6PKjgdNd3
+Z92 I@@eA:@dK<GLhS4oG__WTz2
+Z93 VKfe>keNPnLBlHh<KCg1o52
+R4
+R5
+R6
+R7
+L0 98
+R8
+r1
+31
+R9
+R10
+R11
+R12
+!i10b 1
+!s85 0
+!s101 -O0
+vflopr2
+Z94 I<9zEmDcbMKNzjU<gn8a8Z1
+Z95 VVXSOe<MRWCFzZAhML6^z80
+R4
+R79
+R6
+R7
+L0 81
+R8
+r1
+31
+R81
+R10
+R11
+R12
+Z96 !s100 YHRONI>k^eSi9_1dDXoN_0
+!i10b 1
+!s85 0
+!s101 -O0
+vflopr3
+Z97 IhdV1M^e3Ia>A8O:KGOd140
+Z98 VX3oN`4eIWaW3S>D]To?]o0
+R4
+R79
+R6
+R7
+L0 98
+R8
+r1
+31
+R81
+R10
+R11
+R12
+Z99 !s100 >A@lI1i^X64So2iBU7]Ti0
+!i10b 1
+!s85 0
+!s101 -O0
+vflopr4
+Z100 Ib>B4;^MoHf:Km_MoTg[aM0
+Z101 Vjgj@67J;H>i>Sg7RR;g^]2
+R4
+R79
+R6
+R7
+Z102 L0 150
+R8
+r1
+31
+R81
+R10
+R11
+R12
+Z103 !s100 kl32^2gLa_]FoQ<>4BI6f2
+!i10b 1
+!s85 0
+!s101 -O0
+vflopr5
+Z104 IidX>dY57]8RQ<T<A7lDbB1
+Z105 V`IH<0e_9N6PM<5S1XMaZ33
+R4
+R79
+R6
+R7
+Z106 L0 178
+R8
+r1
+31
+R81
+R10
+R11
+R12
+Z107 !s100 nbbYHe9=ZOO[Yl`bU;>BL3
+!i10b 1
+!s85 0
+!s101 -O0
+vfloprclr
+Z108 IVeEVXIl?XYha:@N8K3GH:3
+Z109 VbY;Q9<`zEYFmUbLniO2I@1
+R4
+R5
+R6
+R7
+Z110 L0 110
+R8
+r1
+31
+R9
+R10
+R11
+R12
+Z111 !s100 bf@CQ0A8P`3N8V9e4nW]53
+!i10b 1
+!s85 0
+!s101 -O0
+vhazard
+Z112 IY0H`FnUaYEcJl5l@_:TlY1
+Z113 VCz_MDA<Dk1eEU`0[Hmz781
+R4
+R5
+Z114 8C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/mipshazard.v
+Z115 FC:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/mipshazard.v
+L0 6
+R8
+r1
+31
+Z116 !s90 -reportprogress|300|-work|work|C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/mipshazard.v|
+R12
+Z117 !s100 9QI<YzcN:_hXdj]=e4^Ea2
+Z118 !s108 1557109117.531000
+Z119 !s107 C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/mipshazard.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vhazardunit
+Z120 !s100 ^MP^<SVFUWR7C?>7L3CHK1
+Z121 I=HH1l9d_Lo6l0]h@OCM`40
+Z122 VlBNGm>9>cE3;fQQa?Y8E83
+R4
+Z123 w1555567358
+Z124 8C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/hazardunit.v
+Z125 FC:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/hazardunit.v
+L0 6
+R8
+r1
+31
+Z126 !s90 -reportprogress|300|-work|work|C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/hazardunit.v|
+R12
+Z127 !s108 1557109116.653000
+Z128 !s107 C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/hazardunit.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vimem
+Z129 !s100 ^n9N>A^Pf8AZVn^mIJa>h3
+Z130 I9ABL?Cn>zb2^94JLFS2<63
+Z131 VoR;z7?^^:99_VP=c9H?I01
+R4
+R5
+R72
+R73
+L0 36
+R8
+r1
+31
+R74
+R75
+R76
+R12
+!i10b 1
+!s85 0
+!s101 -O0
+vma_test
+Z132 ImN5hR^;SlWeLka8CXFNOA0
+Z133 V9MR=RVFY0AO86DaIAV=zh1
+R4
+Z134 w1568682592
+Z135 8C:\Users\Darryl Derico\Dropbox\School Stuff\CPE 408\HW1\ma_test.v
+Z136 FC:\Users\Darryl Derico\Dropbox\School Stuff\CPE 408\HW1\ma_test.v
+L0 1
+R8
+r1
+31
+Z137 !s90 -reportprogress|300|-work|work|C:\Users\Darryl Derico\Dropbox\School Stuff\CPE 408\HW1\ma_test.v|
+R12
+Z138 !s100 4NVE><kbFJ021D8C;BzOc3
+Z139 !s108 1568682592.312000
+Z140 !s107 C:\Users\Darryl Derico\Dropbox\School Stuff\CPE 408\HW1\ma_test.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vmaindec
+Z141 I:9Wm_DL2Em`76_7d^41>32
+Z142 VbM?bX2gn^hVEilbG^B4:?2
+R4
+R5
+R42
+R43
+L0 76
+R8
+r1
+31
+R45
+R46
+R47
+R12
+Z143 !s100 0eD`3=zgVm@^Ih663bOBK0
+!i10b 1
+!s85 0
+!s101 -O0
+vmipspipeline
+Z144 ICRQIddh`bl^0M5`moVVhi2
+Z145 VX@a5[FiM<L_f==ibz3=Ta1
+R4
+R5
+R42
+R43
+L0 5
+R8
+r1
+31
+R45
+R46
+R47
+R12
+Z146 !s100 X<egN>]26We[eWomd3g7W2
+!i10b 1
+!s85 0
+!s101 -O0
+vmipssingle
+Z147 I?>TJk0dUa8n03nL6dl7_a2
+Z148 V1E0zHhhSfn5Fn[HbhXL;:3
+R4
+Z149 w1551845350
+Z150 8C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/mipssingle_3.v
+Z151 FC:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/mipssingle_3.v
+L0 1
+R8
+r1
+31
+Z152 !s108 1555572108.982000
+Z153 !s107 C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/mipssingle_3.v|
+Z154 !s90 -reportprogress|300|-work|work|C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/mipssingle_3.v|
+R12
+Z155 !s100 oWDoUW<C]P;RDCg>9P_gV2
+!i10b 1
+!s85 0
+!s101 -O0
+vMultipleAdd_Control
+Z156 !s100 jb]`mBRDRl<iznY[:eo_z1
+Z157 INhV;F:8o=ROYQbj9j6<n32
+Z158 V9_`i1[6;6iAeNFH:doXjn0
+R4
+R24
+R25
+R26
+L0 12
+R8
+r1
+31
+R27
+R28
+R29
+R12
+Z159 n@multiple@add_@control
+!i10b 1
+!s85 0
+!s101 -O0
+vmultiplier_checker
+!i10b 1
+!s100 UU4M7]Qmhl35^Yd:mz?bY1
+I38G]g19_R:G]8C?iOHbn[3
+Vm6PO3hn13T_`e8_]o]h?^3
+R4
+R32
+R33
+R34
+L0 51
+R8
+r1
+!s85 0
+31
+R36
+R37
+R38
+!s101 -O0
+R12
+vmux2
+Z160 I0VK3ajcmzg@N0dKXMYI[j3
+Z161 VT8RWJBjAIeM]>7U=5kBkT1
+R4
+R5
+R6
+R7
+Z162 L0 153
+R8
+r1
+31
+R9
+R10
+R11
+R12
+Z163 !s100 LPTUClR[;Zg2jAcKRaF9<3
+!i10b 1
+!s85 0
+!s101 -O0
+vmux2not
+Z164 IG@7?LJJl_X4Lk28[V2QQT2
+Z165 VQV`X>I:FXHz;ef^;86Hnd1
+R4
+R5
+R6
+R7
+Z166 L0 163
+R8
+r1
+31
+R9
+R10
+R11
+R12
+Z167 !s100 Q3>2X[Ja<<E@fJTV;NXGk0
+!i10b 1
+!s85 0
+!s101 -O0
+vmux3
+Z168 IXWX5f8[j<[e<]ojPCQkfz0
+Z169 VOUmeXZ?F<IJFMY21E797h2
+R4
+R5
+R6
+R7
+Z170 L0 173
+R8
+r1
+31
+R9
+R10
+R11
+R12
+Z171 !s100 d;J_Rzj_RHUeI:Fb`;blU0
+!i10b 1
+!s85 0
+!s101 -O0
+vmux4
+Z172 I5E7B:a>_MP_kJ1Cgk[0kE3
+Z173 V@m74j;^3XFJ7>OzQXh6V`0
+R4
+R5
+R6
+R7
+Z174 L0 183
+R8
+r1
+31
+R9
+R10
+R11
+R12
+Z175 !s100 `3KNl3Oc5EiUW5@LdGVeo2
+!i10b 1
+!s85 0
+!s101 -O0
+vmux5
+Z176 I0YZV^N^e<cUiUH;K7f6:k0
+Z177 VSO4hSQWJh7dLK]kM[V4nn0
+R4
+R5
+R6
+R7
+Z178 L0 193
+R8
+r1
+31
+R9
+R10
+R11
+R12
+Z179 !s100 @[KCW]6ebZCISQTocH=O50
+!i10b 1
+!s85 0
+!s101 -O0
+vmux6
+Z180 ImD2@=g@@QNJN1LHEh2RDi0
+Z181 VEeN4P2TImY5zJX`Ld91KD1
+R4
+R5
+R6
+R7
+Z182 L0 203
+R8
+r1
+31
+R9
+R10
+R11
+R12
+Z183 !s100 :_:Tn6XC998c4i2g]`3g:3
+!i10b 1
+!s85 0
+!s101 -O0
+vproduct_result_MA
+Z184 !s100 KfKVRC6megW1LJUzEE@H00
+Z185 INb9ii4BTaNUW9;GT3CPPR2
+Z186 V5dl47Lk;A8F?FGT?fV[kn3
+R4
+R24
+R25
+R26
+L0 81
+R8
+r1
+31
+R27
+R28
+R29
+R12
+Z187 nproduct_result_@m@a
+!i10b 1
+!s85 0
+!s101 -O0
+vproduct_result_SAM
+!i10b 1
+!s100 DXE_z3HF25ccAGdn^Dd5]2
+ICg3kR9fD^[l1R^EHTYIgH1
+Z188 VT9;OJREdSHZ[W^G21Ug2=2
+R4
+R32
+R33
+R34
+L0 134
+R8
+r1
+!s85 0
+31
+R36
+R37
+R38
+!s101 -O0
+R12
+Z189 nproduct_result_@s@a@m
+vRegFile
+!i10b 1
+!s100 iT`E6HX?1h1Ed5ab`hjm40
+IzgEHQ8_Zl;?;RjCC4DCi]3
+VRDK8b7XXO5H4HQ_ECNjfY1
+R4
+R32
+R33
+R34
+L0 28
+R8
+r1
+!s85 0
+31
+R36
+R37
+R38
+!s101 -O0
+R12
+n@reg@file
+vregfile
+Z190 !s100 cWHHMCKfn5^PY:^?Ck6g63
+Z191 ID84:zQ5=RdS0:^ICnWR8e2
+Z192 VQ@mLfezHCGEg>C4nNTTH=2
+R4
+R5
+R6
+R7
+L0 5
+R8
+r1
+31
+R9
+R10
+R11
+R12
+!i10b 1
+!s85 0
+!s101 -O0
+vsam_test
+Z193 !s100 MklE_JEc?1mCkT6`EL<gg1
+Z194 I^8Ab]@2nhO?GRBC83DS=`0
+Z195 V^b`?>cJiV0a_[Q^_[lW;n3
+R4
+Z196 w1568680229
+Z197 8C:\Users\Darryl Derico\Dropbox\School Stuff\CPE 408\HW1\sam_test.v
+Z198 FC:\Users\Darryl Derico\Dropbox\School Stuff\CPE 408\HW1\sam_test.v
+L0 1
+R8
+r1
+31
+Z199 !s90 -reportprogress|300|-work|work|C:\Users\Darryl Derico\Dropbox\School Stuff\CPE 408\HW1\sam_test.v|
+R12
+!i10b 1
+!s85 0
+Z200 !s108 1568682592.576000
+Z201 !s107 C:\Users\Darryl Derico\Dropbox\School Stuff\CPE 408\HW1\sam_test.v|
+!s101 -O0
+vShiftAddMult_Control
+!i10b 1
+!s100 lTH:emd6h?63TQ_]XN?3L1
+IfDB>GK?n4L0oLEKLFRM4@2
+Z202 V^ACcZk`6X<>A;_6;S<b<D2
+R4
+R32
+R33
+R34
+L0 11
+R8
+r1
+!s85 0
+31
+R36
+R37
+R38
+!s101 -O0
+R12
+Z203 n@shift@add@mult_@control
+vsignext
+Z204 !s100 Ah8SGV;fe`3I[G_R^X2Pl0
+Z205 I<NVOdfVHB]>d@Z64De>a02
+Z206 VzXjEl4X;;[WhS@=1HjFT41
+R4
+R5
+R6
+R7
+L0 90
+R8
+r1
+31
+R9
+R10
+R11
+R12
+!i10b 1
+!s85 0
+!s101 -O0
+vsignext1
+Z207 Id2mKj7zRH5_58eLjR0G2e2
+Z208 V7VH;9o9>88`8XTjbBYj0J0
+R4
+R79
+R6
+R7
+L0 48
+R8
+r1
+31
+R81
+R10
+R11
+R12
+Z209 !s100 jM_db7IHWbKoR[l2I`TBO3
+!i10b 1
+!s85 0
+!s101 -O0
+vsl2
+Z210 !s100 l0UAnD4a32beZSk[TWSR52
+Z211 IFcnRmkAYeJOO7Ybia:Ol]0
+Z212 VMHGRbO<8oJM:TjGW_j2PX2
+R4
+R5
+R6
+R7
+L0 63
+R8
+r1
+31
+R9
+R10
+R11
+R12
+!i10b 1
+!s85 0
+!s101 -O0
+vsl226
+Z213 !s100 W4?93hM5Y`@c?XBhLNQoF0
+Z214 IB6``k[OI^6Y]GSGY^U`mE0
+Z215 VGT7b`LN85h6[1e1=J8^zc0
+R4
+R5
+R6
+R7
+L0 72
+R8
+r1
+31
+R9
+R10
+R11
+R12
+!i10b 1
+!s85 0
+!s101 -O0
+Etestbench
+Z216 w1555567988
+Z217 DPx7 verilog 8 vl_types 0 22 ]G>2izW1V4dcRR@F[keS10
+R4
+Z218 8C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/work/testbench/_primary.vhd
+Z219 FC:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/work/testbench/_primary.vhd
+l0
+L3
+Z220 V2W=eejWbO?eK7R<E@jL@23
+Z221 OV;C;10.1d;51
+32
+Z222 o-work work -2002 -explicit -O0
+Z223 tExplicit 1
+Z224 !s100 BWd4h0MM^SA<89SBX_AnY3
+Z225 !s108 1555572110.303000
+Z226 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/work/testbench/_primary.vhd|
+Z227 !s107 C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/work/testbench/_primary.vhd|
+!i10b 1
+vtestbench2
+Z228 !s100 ;eW`0PkkHg:7fml:`i]XP1
+Z229 I;MKb8M3RKHfi[EbcDNi0J2
+Z230 V<WjIFPfEhdLN6;1kTlCRZ3
+R4
+Z231 w1551687503
+Z232 8C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/Ex4.39_testbench3.v
+Z233 FC:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/Ex4.39_testbench3.v
+L0 1
+R8
+r1
+31
+Z234 !s90 -reportprogress|300|-work|work|C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/Ex4.39_testbench3.v|
+R12
+Z235 !s108 1557109109.224000
+Z236 !s107 C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/Ex4.39_testbench3.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vtop_MA
+Z237 !s100 :`SRB0>CMnjKJMFT^VALL0
+Z238 IZEm@3a;jgJ;B2YMj[BiXg3
+Z239 Vl124RcUe7WgmJQK39;zhT1
+R4
+R24
+R25
+R26
+L0 1
+R8
+r1
+31
+R27
+R28
+R29
+R12
+Z240 ntop_@m@a
+!i10b 1
+!s85 0
+!s101 -O0
+vtop_SAM
+!i10b 1
+!s100 GIkE?4jXg1WHW]PZf6fb80
+IkXz9hDCdlX]b>V9729V:@1
+Z241 V=dMYJ=mgnR6BakgIzoHE:0
+R4
+R32
+R33
+R34
+L0 1
+R8
+r1
+!s85 0
+31
+R36
+R37
+R38
+!s101 -O0
+R12
+Z242 ntop_@s@a@m
+vtoppipeline
+Z243 I_[EzMG0TKX83>Dhz_WcT02
+Z244 V^Ji2;Z_iN@6mfDjDL<@WC1
+R4
+R5
+Z245 8C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/top.v
+Z246 FC:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/top.v
+L0 5
+R8
+r1
+31
+Z247 !s90 -reportprogress|300|-work|work|C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/top.v|
+R12
+Z248 !s100 <2XMkYJB_^i4dVVe3Do]n1
+Z249 !s108 1557109115.108000
+Z250 !s107 C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/top.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vtopsingle
+Z251 IJ6;;0IITQKMegJYc@>`zC3
+Z252 Vf1nCozB_>eT4M9LnL1aA93
+R4
+Z253 w1551688241
+Z254 8C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/top_2.v
+Z255 FC:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/top_2.v
+L0 7
+R8
+r1
+31
+R12
+Z256 !s100 KnPKlRAM;_mX[VDnDRMi>0
+Z257 !s90 -reportprogress|300|-work|work|C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/top_2.v|
+Z258 !s108 1555567989.039000
+Z259 !s107 C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 404/Final Project/top_2.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vupimm
+Z260 I<>]gBgW=IzZhf=QD?PlH31
+Z261 V;<@2_]IP:5X>B39abGE6L0
+R4
+R79
+R6
+R7
+Z262 L0 220
+R8
+r1
+31
+R81
+R10
+R11
+R12
+Z263 !s100 [eVkP_=8S6;=P=iYcEFi61
+!i10b 1
+!s85 0
+!s101 -O0
+vzeroext
+Z264 IH0_DDlW^PMBncW@[b<ha?0
+Z265 VD`AbPm3a0d5M:EhXC4gWm0
+R4
+R79
+R6
+R7
+L0 54
+R8
+r1
+31
+R81
+R10
+R11
+R12
+Z266 !s100 ]j9O:Zj[K0K7_CL]Yf3Yz0
+!i10b 1
+!s85 0
+!s101 -O0

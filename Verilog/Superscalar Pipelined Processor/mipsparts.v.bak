@@ -1,0 +1,174 @@
+//-----
+//mipsparts.v
+//-----
+
+module regfile(input         clk, 
+               input         we3, 
+               input  [4:0]  ra1, ra2, wa3, 
+               input  [31:0] wd3, 
+               output [31:0] rd1, rd2,
+			   input         we6, 
+               input  [4:0]  ra4, ra5, wa6, 
+               input  [31:0] wd6, 
+               output [31:0] rd4, rd5);
+
+	reg [31:0] rf[31:0];
+
+	//three ported register file
+	//read two ports combinationally
+	//write third port on rising edge of clock
+	//register 0 hardwired to 0
+	always @(negedge clk) //for clock bar
+		if (we3) rf[wa3] <= wd3;
+	always @(negedge clk) //for clock bar
+		if (we6) rf[wa6] <= wd6;
+
+		assign rd1 = (ra1 != 0) ? rf[ra1] : 0;
+		assign rd2 = (ra2 != 0) ? rf[ra2] : 0;
+		assign rd4 = (ra4 != 0) ? rf[ra4] : 0;
+		assign rd5 = (ra5 != 0) ? rf[ra5] : 0;
+endmodule
+
+//-------------------------------------------------------
+
+module adder(input  [31:0] a, b,
+             output [31:0] y);
+
+	assign y = a + b;
+endmodule
+
+//-------------------------------------------------------
+
+module comparator (input [31:0] a, b,
+			       output reg	y);
+	
+	always @(*)
+	begin
+	if (a == b)
+	y = 1;
+	else
+	y = 0;
+	end	
+endmodule
+
+//-------------------------------------------------------
+
+module sl2 (input  [31:0] a,
+            output [31:0] y);
+		   
+	// shift left by 2
+	assign y = {a[29:0], 2'b00};
+endmodule
+
+//-------------------------------------------------------
+
+module sl226 (input [25:0] a,
+			  output[27:0] y);
+			  
+	// shift left by 2
+	assign y = {a[25:0], 2'b00};
+endmodule
+
+//-------------------------------------------------------
+
+module attach (input [27:0] a,
+			   input [31:0] b,
+			   output[31:0] y);
+			   
+	assign y = {b[31:28], a[27:0]};
+endmodule
+
+//-------------------------------------------------------
+
+module signext(input  [15:0] a,
+               output [31:0] y);
+              
+	assign y = {{16{a[15]}}, a};
+endmodule
+
+//-------------------------------------------------------
+
+module flopr #(parameter WIDTH = 8)
+              (input                  clk, reset,
+               input      [WIDTH-1:0] d, 
+               output reg [WIDTH-1:0] q);
+
+	always @(posedge clk, posedge reset)
+		if (reset) q <= 0;
+		else       q <= d;
+endmodule
+
+//-------------------------------------------------------
+
+module flopenr #(parameter WIDTH = 8)
+                (input                  clk, reset,
+                 input                  en,
+                 input      [WIDTH-1:0] d, 
+                 output reg [WIDTH-1:0] q);
+ 
+	always @(posedge clk, posedge reset)
+		if      (reset) q <= 0;
+		else if (en)    q <= d;
+endmodule
+
+//-------------------------------------------------------
+
+module flopenrclr # (parameter WIDTH = 8)
+					(input                  clk, reset,
+					 input                  en, clear,
+					 input      [WIDTH-1:0] d, 
+					 output reg [WIDTH-1:0] q);
+ 
+	always @(posedge clk, posedge reset)
+		if      (reset) q <= 0;
+		else if (clear) q <= 0;
+		else if (en)    q <= d;
+endmodule
+
+//-------------------------------------------------------
+
+module mux2 #(parameter WIDTH = 8)
+             (input  [WIDTH-1:0] d0, d1, 
+              input              s, 
+              output [WIDTH-1:0] y);
+
+	assign y = s ? d1 : d0; 
+endmodule
+
+//-------------------------------------------------------
+
+module mux2not #(parameter WIDTH = 8)
+             (input  [WIDTH-1:0] d0, d1, 
+              input              s, 
+              output [WIDTH-1:0] y);
+
+	assign y = s ? d0 : d1; 
+endmodule
+
+//-------------------------------------------------------
+
+module mux3 #(parameter WIDTH = 8)
+             (input  [WIDTH-1:0] d0, d1, d2,
+              input  [1:0]       s, 
+              output [WIDTH-1:0] y);
+
+	assign #1 y = s[1] ? d2 : (s[0] ? d1 : d0); 
+endmodule
+
+//-------------------------------------------------------
+
+module mux4 #(parameter WIDTH = 8)
+			 (input [WIDTH-1:0] d0, d1, d2, d3,
+			  input [1:0]        s,
+			  output [WIDTH-1:0] y);
+			  
+	assign #1 y = s[1] ? (s[0] ? d3 : d2) : (s[0] ? d1 : d0);
+endmodule
+
+//-------------------------------------------------------
+
+module and1 (input branchm, equald,
+			 output pcsrcd);
+			 
+	assign pcsrcd = (branchm & equald);
+endmodule

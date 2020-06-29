@@ -1,0 +1,44 @@
+{C:/Users/Darryl Derico/Downloads/top_SAM.v} {1 {vlog -work work {C:/Users/Darryl Derico/Downloads/top_SAM.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module top_SAM
+-- Compiling module ShiftAddMult_Control
+-- Compiling module RegFile
+-- Compiling module multiplier_checker
+-- Compiling module alu_SAM
+-- Compiling module product_result_SAM
+
+Top level modules:
+	top_SAM
+
+} {} {}} {C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 408/HW1/sam_test.v} {1 {vlog -work work {C:\Users\Darryl Derico\Dropbox\School Stuff\CPE 408\HW1\sam_test.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module sam_test
+
+Top level modules:
+	sam_test
+
+} {} {}} {C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 408/HW1/behavioral_hw1.v} {1 {vlog -work work {C:\Users\Darryl Derico\Dropbox\School Stuff\CPE 408\HW1\behavioral_hw1.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module top_MA
+-- Compiling module MultipleAdd_Control
+-- Compiling module alu_MA
+-- Compiling module counter
+-- Compiling module product_result_MA
+-- Compiling module top_SAM
+-- Compiling module ShiftAddMult_Control
+-- Compiling module multiplier_checker
+-- Compiling module alu_SAM
+-- Compiling module product_result_SAM
+
+Top level modules:
+	top_MA
+	top_SAM
+
+} {} {}} {C:/Users/Darryl Derico/Dropbox/School Stuff/CPE 408/HW1/ma_test.v} {1 {vlog -work work {C:\Users\Darryl Derico\Dropbox\School Stuff\CPE 408\HW1\ma_test.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module ma_test
+
+Top level modules:
+	ma_test
+
+} {} {}}

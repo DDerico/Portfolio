@@ -1,0 +1,42 @@
+library verilog;
+use verilog.vl_types.all;
+entity datapath is
+    port(
+        clk             : in     vl_logic;
+        reset           : in     vl_logic;
+        pcfODD          : out    vl_logic_vector(31 downto 0);
+        instrdODD       : out    vl_logic_vector(31 downto 0);
+        aluoutmODD      : out    vl_logic_vector(31 downto 0);
+        writedataeODD   : out    vl_logic_vector(31 downto 0);
+        readdatamODD    : in     vl_logic_vector(31 downto 0);
+        memtoregdODD    : in     vl_logic;
+        pcsrcdODD       : out    vl_logic;
+        alusrcdODD      : in     vl_logic;
+        regdstdODD      : in     vl_logic;
+        regwritedODD    : in     vl_logic;
+        jumpdODD        : in     vl_logic;
+        alucontroldODD  : in     vl_logic_vector(3 downto 0);
+        memwritedODD    : in     vl_logic;
+        branchdODD      : in     vl_logic;
+        instrfODD       : in     vl_logic_vector(31 downto 0);
+        pcfEVEN         : out    vl_logic_vector(31 downto 0);
+        instrdEVEN      : out    vl_logic_vector(31 downto 0);
+        aluoutmEVEN     : out    vl_logic_vector(31 downto 0);
+        writedataeEVEN  : out    vl_logic_vector(31 downto 0);
+        readdatamEVEN   : in     vl_logic_vector(31 downto 0);
+        memtoregdEVEN   : in     vl_logic;
+        pcsrcdEVEN      : out    vl_logic;
+        alusrcdEVEN     : in     vl_logic;
+        regdstdEVEN     : in     vl_logic;
+        regwritedEVEN   : in     vl_logic;
+        jumpdEVEN       : in     vl_logic;
+        alucontroldEVEN : in     vl_logic_vector(3 downto 0);
+        memwritedEVEN   : in     vl_logic;
+        branchdEVEN     : in     vl_logic;
+        instrfEVEN      : in     vl_logic_vector(31 downto 0);
+        memwritemODD    : in     vl_logic;
+        memwritemEVEN   : in     vl_logic;
+        writedatamODD   : in     vl_logic_vector(31 downto 0);
+        writedatamEVEN  : in     vl_logic_vector(31 downto 0)
+    );
+end datapath;

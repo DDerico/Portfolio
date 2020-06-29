@@ -1,0 +1,43 @@
+library verilog;
+use verilog.vl_types.all;
+entity hazard is
+    port(
+        WriteRegE1      : in     vl_logic_vector(4 downto 0);
+        WriteRegM1      : in     vl_logic_vector(4 downto 0);
+        WriteRegW1      : in     vl_logic_vector(4 downto 0);
+        WriteRegE2      : in     vl_logic_vector(4 downto 0);
+        WriteRegM2      : in     vl_logic_vector(4 downto 0);
+        WriteRegW2      : in     vl_logic_vector(4 downto 0);
+        RegWriteE1      : in     vl_logic;
+        RegWriteM1      : in     vl_logic;
+        RegWriteW1      : in     vl_logic;
+        RegWriteE2      : in     vl_logic;
+        RegWriteM2      : in     vl_logic;
+        RegWriteW2      : in     vl_logic;
+        MemtoRegE1      : in     vl_logic;
+        MemtoRegM1      : in     vl_logic;
+        MemtoRegE2      : in     vl_logic;
+        MemtoRegM2      : in     vl_logic;
+        rsD1            : in     vl_logic_vector(4 downto 0);
+        rtD1            : in     vl_logic_vector(4 downto 0);
+        rsE1            : in     vl_logic_vector(4 downto 0);
+        rtE1            : in     vl_logic_vector(4 downto 0);
+        rsD2            : in     vl_logic_vector(4 downto 0);
+        rtD2            : in     vl_logic_vector(4 downto 0);
+        rsE2            : in     vl_logic_vector(4 downto 0);
+        rtE2            : in     vl_logic_vector(4 downto 0);
+        BranchD1        : in     vl_logic;
+        BranchD2        : in     vl_logic;
+        StallF          : out    vl_logic;
+        StallD          : out    vl_logic;
+        FlushE          : out    vl_logic;
+        ForwardAD1      : out    vl_logic_vector(1 downto 0);
+        ForwardBD1      : out    vl_logic_vector(1 downto 0);
+        ForwardAD2      : out    vl_logic_vector(1 downto 0);
+        ForwardBD2      : out    vl_logic_vector(1 downto 0);
+        ForwardAE1      : out    vl_logic_vector(2 downto 0);
+        ForwardBE1      : out    vl_logic_vector(2 downto 0);
+        ForwardAE2      : out    vl_logic_vector(2 downto 0);
+        ForwardBE2      : out    vl_logic_vector(2 downto 0)
+    );
+end hazard;

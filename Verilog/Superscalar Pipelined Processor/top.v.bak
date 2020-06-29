@@ -1,0 +1,28 @@
+//-----
+// top.v
+//-----
+
+module toppipeline(input         clk, reset,
+                   input  [31:0] readdataODD,
+                   output [31:0] writedataODD, dataadrODD, 
+                   output        memwriteODD,
+				   
+				   input  [31:0] readdataEVEN,
+				   output [31:0] writedataEVEN, dataadrEVEN,
+				   output		 memwriteEVEN);
+  
+	wire [31:0] pcODD, instrODD, pcEVEN, instrEVEN;
+  
+	// instantiate processor and memories
+	mipspipeline mipspipeline (clk, reset, pcODD, instrODD, memwriteODD, dataadrODD, 
+                               writedataODD, readdataODD,
+							   pcEVEN, instrEVEN, memwriteEVEN, dataadrEVEN,
+							   writedataEVEN, readdataEVEN);
+							  
+	imem imem		(pcODD[7:2], pcEVEN[7:2], instrODD, instrEVEN);
+	dmem dmemODD	(clk, memwriteODD, dataadrODD, writedataODD, 
+					 readdataODD);
+	dmem dmemEVEN	(clk, memwriteEVEN, dataadrEVEN, writedataEVEN, 
+					 readdataEVEN);
+endmodule
+
